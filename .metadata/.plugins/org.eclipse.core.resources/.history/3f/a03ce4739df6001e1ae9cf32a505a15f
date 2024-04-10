@@ -1,0 +1,5 @@
+package com.joaoldantasn.imageliteapi.application.images;
+
+public class ImagesController {
+
+}
