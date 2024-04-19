@@ -1,0 +1,16 @@
+package com.joaoldantasn.imageliteapi.service;
+
+import org.springframework.stereotype.Service;
+
+import com.joaoldantasn.imageliteapi.domain.entity.Image;
+
+@Service
+public class ImageServiceImpl implements ImageService{
+
+	@Override
+	public Image save(Image image) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
