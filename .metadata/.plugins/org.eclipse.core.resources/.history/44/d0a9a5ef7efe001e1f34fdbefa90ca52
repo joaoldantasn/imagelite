@@ -1,0 +1,8 @@
+package com.joaoldantasn.imageliteapi.imagesMapper;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class ImageMapper {
+
+}

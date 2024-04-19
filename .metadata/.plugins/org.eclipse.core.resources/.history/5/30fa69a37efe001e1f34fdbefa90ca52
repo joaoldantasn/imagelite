@@ -1,0 +1,6 @@
+package com.joaoldantasn.imageliteapi.imagesMapper;
+
+@Component
+public class ImageMapper {
+
+}
