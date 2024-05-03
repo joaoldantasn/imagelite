@@ -3,6 +3,7 @@ package com.joaoldantasn.imageliteapi.application.images;
 import java.io.IOException;
 import java.net.URI;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.joaoldantasn.imageliteapi.domain.entity.Image;
+import com.joaoldantasn.imageliteapi.domain.enums.ImageExtension;
 import com.joaoldantasn.imageliteapi.imagesMapper.ImageMapper;
 import com.joaoldantasn.imageliteapi.service.ImageService;
 
@@ -65,6 +67,17 @@ public class ImagesController {
 		headers.setContentDispositionFormData("inline; filename=\"" + image.getFileName() +"\"", image.getFileName());
 		
 		return new ResponseEntity<>(image.getFile(), headers, HttpStatus.OK);
+	}
+	// loacalhost:8080/v1/images?extension=PNG&query=Nature
+	@GetMapping
+	public ResponseEntity<List<ImageDTO>> search(@RequestParam(value = "extension", required = false) String extension,@RequestParam(value = "extension", required = false) String query){
+		var result = service.search(ImageExtension.valueOf(extension), query);
+		var images = result.stream().map(image -> {
+			var url = buildImageURL(image);
+			return mapper.imageToDTO(image, url.toString());
+		}).collect(Collectors.toList());
+		
+		return ResponseEntity.ok(images);
 	}
 	
 	// loacalhost:8080/v1/images/akigbfdkcfdsa
