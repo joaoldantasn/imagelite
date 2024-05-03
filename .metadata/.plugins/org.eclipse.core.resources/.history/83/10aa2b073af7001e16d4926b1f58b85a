@@ -1,9 +1,0 @@
-package com.joaoldantasn.imageliteapi.domain.entity;
-
-import jakarta.persistence.Entity;
-
-@Entity
-@Table
-public class Image {
-
-}

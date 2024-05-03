@@ -1,5 +1,0 @@
-package com.joaoldantasn.imageliteapi.domain.enums;
-
-public enum ImageExtension {
-
-}

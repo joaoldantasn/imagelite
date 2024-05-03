@@ -50,4 +50,9 @@ public class Image {
 	@Lob
 	private byte[] file;
 	
+	public String getFileName() {
+		//ex:flowers.PNG
+		return getName().concat(".").concat(getExtension().name());
+	}
+	
 }
