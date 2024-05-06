@@ -1,5 +1,0 @@
-package com.joaoldantasn.imageliteapi.service;
-
-public class ImageServiceImpl implements ImageService{
-
-}

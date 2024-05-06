@@ -1,5 +1,0 @@
-package com.joaoldantasn.imageliteapi.infra.repository;
-
-public interface ImageRepository {
-
-}

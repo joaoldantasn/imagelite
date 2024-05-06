@@ -9,6 +9,7 @@ import org.springframework.util.StringUtils;
 
 import com.joaoldantasn.imageliteapi.domain.entity.Image;
 import com.joaoldantasn.imageliteapi.domain.enums.ImageExtension;
+import com.joaoldantasn.imageliteapi.infra.repository.specs.ImageSpecs;
 
 public interface ImageRepository extends JpaRepository<Image, String>, JpaSpecificationExecutor<Image>{
 
@@ -18,8 +19,7 @@ public interface ImageRepository extends JpaRepository<Image, String>, JpaSpecif
 		Specification<Image> spec = Specification.where(conjunction);
 		
 		if(extension != null) {
-			Specification<Image> extensionEqual = (root, q, cb) -> cb.equal(root.get("extension"), extension);
-			spec = spec.and(extensionEqual);
+			spec = spec.and(ImageSpecs.extensionEqual(extension));
 		}
 		
 		if(StringUtils.hasText(query)) {
