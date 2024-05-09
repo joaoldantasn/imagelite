@@ -1,13 +1,13 @@
 interface TemplateProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
-export const Template: React.FC<TemplateProps> = (props:TemplateProps) => {
+export const Template: React.FC<TemplateProps> = ({children}:TemplateProps) => {
   return (
     <>
       <Header />
         <div className="container mx-auto mt-8 px-4">
-        {props.children}
+          {children}
         </div>
       <Footer />
     </>
