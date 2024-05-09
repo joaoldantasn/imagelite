@@ -46,4 +46,5 @@
     <fullyQualifiedTypeName name="com.joaoldantasn.imageliteapi.domain.entity.Image"/>
     <fullyQualifiedTypeName name="com.joaoldantasn.imageliteapi.infra.repository.specs.ImageSpecs"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonFormat"/>
 </qualifiedTypeNameHistroy>
